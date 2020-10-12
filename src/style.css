@@ -1,3 +1,85 @@
 *{
   font-family: Arial;
+  padding: 0;
+  margin: 0;
+}
+
+
+.topsection, .todosection{
+  -webkit-box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
+  -moz-box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
+  box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
+  margin: 10px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.topsection{
+  background: rgb(255, 208, 208);
+  text-align: center;
+}
+
+.todosection{
+  background: rgb(255, 244, 244);
+  min-height: 75vh;
+}
+
+
+input , button{
+  margin: 10px 5px;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.todoinput{
+  min-width: 40vw;
+}
+
+
+#addbtn{
+  background: rgb(61, 0, 29) !important;
+  color: white;
+  font-weight: bold;
+}
+
+
+.todolist{
+  background: rgb(255, 220, 220);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.todo{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 8px;
+  background: rgb(251, 255, 247);
+  margin: 5px;
+}
+
+.tododetails{
+  margin: 8px;
+  flex: .8;
+}
+
+.todotime{
+  text-align: center;
+  flex: .1;
+}
+
+.delbtn, .donebtn{
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.donebtn{
+  background: rgb(0, 131, 0);
+}
+
+.delbtn{
+background: rgb(173, 0, 0);
 }
