@@ -91,7 +91,6 @@ input , button{
     padding: 0;
   }
   
-  
   .todo{
     flex-direction: column;
   }
