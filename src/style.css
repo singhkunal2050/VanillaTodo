@@ -46,7 +46,6 @@ input , button{
 
 
 .todolist{
-  background: rgb(255, 220, 220);
   border-radius: 8px;
   padding: 10px;
 }
@@ -56,13 +55,15 @@ input , button{
   justify-content: start;
   align-items: center;
   border-radius: 8px;
-  background: rgb(251, 255, 247);
+  background: rgb(253, 123, 140);
   margin: 5px;
 }
 
 .tododetails{
   margin: 8px;
   flex: .8;
+  background: white;
+  padding: 10px;
 }
 
 .todotime{
@@ -81,5 +82,21 @@ input , button{
 }
 
 .delbtn{
-background: rgb(173, 0, 0);
+  background: rgb(173, 0, 0);
+}
+
+
+@media(max-width:700px){
+  .todosection{
+    padding: 0;
+  }
+  
+  
+  .todo{
+    flex-direction: column;
+  }
+
+  .tododetails{
+    align-self: stretch;
+  }
 }
