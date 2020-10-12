@@ -2,15 +2,13 @@ document.getElementById('addbtn').addEventListener('click' , addnewTodo )
 
 function addnewTodo(){
   console.log('adding new')
-
+  var d = new Date();
   let todo = document.createElement('div')
+  let todotitle = document.getElementsByClassName('todoinput')[0].value
+  let todotime =   d.getHours() + ":" + d.getMinutes(); 
+  
   todo.classList.add("todo");
-  todo.innerHTML= ' <p class="tododetails">This is the new todo</p><p class="todotime">05:30 PM</p><button class="donebtn">Completed</button><button class="delbtn">Delete </button>'
-  // let tododetails = document.createElement('p')
-  // let todotime = document.createElement('p')
-  // let donebtn = document.createElement('button')
-  // let delbtn = document.createElement('button')
-
+  todo.innerHTML= ' <p class="tododetails">'+ todotitle +'</p><p class="todotime">'+ todotime + '</p><button class="donebtn">Completed</button><button class="delbtn">Delete </button>'
   document.getElementsByClassName('todolist')[0].appendChild(todo)
 }
 
