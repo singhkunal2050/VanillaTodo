@@ -1,28 +1,68 @@
-document.getElementById('addbtn').addEventListener('click' , addnewTodo )
+todos = []
 
-function addnewTodo(){
-  console.log('adding new')
-  var d = new Date();
-  let todo = document.createElement('div')
-  let todotitle = document.getElementsByClassName('todoinput')[0].value
-  let todotime =   d.getHours() + ":" + d.getMinutes(); 
-  
-  todo.classList.add("todo");
-  todo.innerHTML= ' <p class="tododetails">'+ todotitle +'</p><p class="todotime">'+ todotime + '</p><button class="donebtn">Completed</button><button class="delbtn">Delete </button>'
-  document.getElementsByClassName('todolist')[0].appendChild(todo)
+let newt = {
+  title :'input' , 
+  time : new Date().getTime(),
+  isCompleted : false,
 }
 
-document.getElementsByClassName('donebtn')[0].addEventListener('click' , done )
+for(let i=0 ; i<4 ; i++)
+  todos.push(newt)
 
+
+function renderTodos(){
+  let list = document.querySelector('.todolist')
+//  list.innerHTML=""
+  todos.forEach(todo => {
+    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn" class="${todo.isCompleted}">Completed</button><button class="delbtn">Delete</button></div>`
+
+  });
+
+}
+
+
+document.getElementById('addbtn').addEventListener('click' , addnewTodo )
+function addnewTodo(){
+  let input = document.querySelector('.todoinput').value;
+  console.log(input)
+  if(input==='')
+    alert('Come on!')
+  else{
+    let newt = {
+      title :input , 
+      time : new Date().getTime(),
+      isCompleted : false,
+    }
+    todos.push(newt)
+  }
+  document.querySelector('.todoinput').value=""
+  console.log(todos)
+  renderTodos()
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+function savetoLocalStorage(todolist){
+  localStorage.setItem('todos' , todolist);
+  console.log(localStorage)
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+document.getElementsByClassName('donebtn')[0].addEventListener('click' , done )
 function done(){
   console.log('done')
 }
 
-document.getElementsByClassName('delbtn')[0].addEventListener('click' , delTodo )
+////////////////////////////////////////////////////////////////////////////////////////
 
+document.getElementsByClassName('delbtn')[0].addEventListener('click' , delTodo )
 function delTodo(){
   console.log('deleting')
 }
+
+
 
 
 
