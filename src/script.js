@@ -15,7 +15,7 @@ function renderTodos(){
   let list = document.querySelector('.todolist')
   list.innerHTML=""
   todos.forEach(todo => {
-    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}"  onclick ="done()">Incomplete</button><button class="delbtn" onclick ="delTodo()">Delete</button></div>`
+    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
 
   //checks if todos are complete or not
@@ -42,6 +42,14 @@ function addnewTodo(){
   document.querySelector('.todoinput').value=""
   console.log(todos)
   renderTodos()
+ 
+ 
+  //listning all btns
+  todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
+    dbtn.addEventListener('click' , done)
+  }) : null;
+
+  todos.length>0 ? document.querySelector('.delbtn').addEventListener('click' , delTodo) : null;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -53,15 +61,14 @@ function savetoLocalStorage(todolist){
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-
-function done(){
-  console.log('done')
+function done(e){
+  console.log('done' + e)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function delTodo(){
-  console.log('deleting')
+function delTodo(e){
+  console.log('deleting' + e)
 }
 
 
