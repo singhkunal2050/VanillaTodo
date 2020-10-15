@@ -1,22 +1,25 @@
 todos = []
+let flag = false;
 
-let newt = {
-  title :'input' , 
-  time : new Date().getTime(),
-  isCompleted : false,
-}
+// let newt = {
+//   title :'input' , 
+//   time : new Date().getTime(),
+//   isCompleted : false,
+// }
 
-for(let i=0 ; i<4 ; i++)
-  todos.push(newt)
+// for(let i=0 ; i<4 ; i++)
+//   todos.push(newt)
 
 
 function renderTodos(){
   let list = document.querySelector('.todolist')
-//  list.innerHTML=""
+  list.innerHTML=""
   todos.forEach(todo => {
-    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn" class="${todo.isCompleted}">Completed</button><button class="delbtn">Delete</button></div>`
-
+    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}">Incomplete</button><button class="delbtn">Delete</button></div>`
   });
+
+  //checks if todos are complete or not
+  doneornot()
 
 }
 
@@ -24,6 +27,7 @@ function renderTodos(){
 document.getElementById('addbtn').addEventListener('click' , addnewTodo )
 function addnewTodo(){
   let input = document.querySelector('.todoinput').value;
+  flag= !flag
   console.log(input)
   if(input==='')
     alert('Come on!')
@@ -31,7 +35,7 @@ function addnewTodo(){
     let newt = {
       title :input , 
       time : new Date().getTime(),
-      isCompleted : false,
+      isCompleted : !flag,
     }
     todos.push(newt)
   }
@@ -63,7 +67,10 @@ function delTodo(){
 }
 
 
-
-
-
+function doneornot(){
+  let dones = document.querySelectorAll('.true')
+  dones.forEach(done => {
+    done.innerHTML = "Completed✅";
+  })
+}
 
