@@ -62,13 +62,13 @@ function savetoLocalStorage(todolist){
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function done(e){
-  console.log('done' + e)
+  console.log( e)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function delTodo(e){
-  console.log('deleting' + e)
+  console.log( e)
 }
 
 
@@ -84,6 +84,15 @@ function doneornot(){
   dones2.forEach(done => {
     done.innerHTML = "Incomplete❌";
   })
-
 }
 
+
+
+// for fun 
+
+document.querySelector('body').addEventListener('mousemove' , animate);
+function animate(e){
+  // console.log(e.screenX + " " + e.screenY )
+  let body = document.querySelector('body')
+  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%44} ,${e.screenY%255})`)
+}
