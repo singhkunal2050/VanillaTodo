@@ -55,9 +55,17 @@ input , button{
   justify-content: start;
   align-items: center;
   border-radius: 8px;
-  background: rgb(253, 123, 140);
   margin: 5px;
 }
+
+.completed{
+  background: greenyellow;
+}
+
+.incomplete{
+  background: orange;
+}
+
 
 .tododetails{
   margin: 8px;

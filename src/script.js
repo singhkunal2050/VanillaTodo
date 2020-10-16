@@ -23,7 +23,10 @@ function renderTodos(){
   let list = document.querySelector('.todolist')
   list.innerHTML=""
   todos.forEach(todo => {
-    list.innerHTML= list.innerHTML + `<div class="todo" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+    if(todo.isCompleted===true)
+      list.innerHTML= list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+    else
+      list.innerHTML= list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
 
   //checks if todos are complete or not
