@@ -2,24 +2,42 @@ todos = []
 let flag = false;
 
 let newt = {
+  id:1,
   title :'input' , 
   time : new Date().getTime(),
-  isCompleted :  Math.random() >= 0.1,
+  isCompleted :  Math.random() >= Math.random(),
+}
+let newt2 = {
+  id:2,
+  title :'input' , 
+  time : new Date().getTime(),
+  isCompleted :  Math.random() <= Math.random(),
 }
 
-for(let i=0 ; i<4 ; i++)
+for(let i=1 ; i<2 ; i++){
   todos.push(newt)
-
+  todos.push(newt2)
+}
 
 function renderTodos(){
   let list = document.querySelector('.todolist')
   list.innerHTML=""
   todos.forEach(todo => {
-    list.innerHTML= list.innerHTML + `<div class="todo"><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+    list.innerHTML= list.innerHTML + `<div class="todo" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
 
   //checks if todos are complete or not
   doneornot()
+
+  //listning all btns
+  todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
+    dbtn.addEventListener('click' , done)
+  }) : null;
+
+  todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
+    delbtn.addEventListener('click' , delTodo)
+  }) : null;
+
 }
 
 
@@ -41,15 +59,7 @@ function addnewTodo(){
   document.querySelector('.todoinput').value=""
   console.log(todos)
   renderTodos()
- 
-  //listning all btns
-  todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
-    dbtn.addEventListener('click' , done)
-  }) : null;
 
-  todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
-    delbtn.addEventListener('click' , delTodo)
-  }) : null;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +72,19 @@ function savetoLocalStorage(todolist){
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function done(e){
-  console.log(e.target)
+  // gets current todo id 
+  let btn = e.target
+  // btn.innerHTML = "Completed✅";
+  // btn.disabled=true;
+  // btn.setAttribute('style' , 'background:green')
+ 
+  let id = btn.parentElement.id
+  todos.forEach(todo =>{
+    if(todo.id==id){
+      todo.isCompleted=true;
+    }
+  });
+  renderTodos()
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
