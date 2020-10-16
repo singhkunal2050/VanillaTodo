@@ -42,6 +42,13 @@ function renderTodos(){
 
 }
 
+//added enter key listener to input
+document.querySelector('.todoinput').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    addnewTodo()
+  }
+});
+
 
 document.getElementById('addbtn').addEventListener('click' , addnewTodo )
 function addnewTodo(){
@@ -111,9 +118,10 @@ function doneornot(){
 }
 
 // for fun 
-document.querySelector('body').addEventListener('mousemove' , animate);
-function animate(e){
-  // console.log(e.screenX + " " + e.screenY )
-  let body = document.querySelector('body')
-  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
-}
+// document.querySelector('body').addEventListener('mousemove' , animate);
+// function animate(e){
+//   // console.log(e.screenX + " " + e.screenY )
+//   let body = document.querySelector('body')
+//   body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
+// }
+
