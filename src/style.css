@@ -74,6 +74,7 @@ input , button{
 .tododetails{
   margin: 8px;
   flex: .8;
+  overflow-x: scroll;
   background: white;
   padding: 10px;
   border-radius: 16px;
