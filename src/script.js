@@ -34,7 +34,7 @@ function renderTodos(){
   //listning all btns
   todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
     dbtn.addEventListener('click' , done)
-  }) : list.innerHTML = '<h2 style="text-align:center;">No Todos Added :( </h2>';
+  }) : list.innerHTML = '<h2 style="text-align:center; margin-top:20px">No Todos Added 😔 </h2>';
 
   todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
     delbtn.addEventListener('click' , delTodo)
