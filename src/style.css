@@ -72,6 +72,7 @@ input , button{
   flex: .8;
   background: white;
   padding: 10px;
+  border-radius: 16px;
 }
 
 .todotime{

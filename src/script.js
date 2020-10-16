@@ -53,16 +53,16 @@ function addnewTodo(){
     alert('Come on!')
   else{
     let newt = {
+      id: Math.floor(Math.random()*1000%999),
       title :input , 
       time : new Date().getTime(),
       isCompleted : !flag,
     }
-    todos.push(newt)
+    todos.unshift(newt)
   }
   document.querySelector('.todoinput').value=""
   console.log(todos)
   renderTodos()
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -75,12 +75,7 @@ function savetoLocalStorage(todolist){
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function done(e){
-  // gets current todo id 
   let btn = e.target
-  // btn.innerHTML = "Completed✅";
-  // btn.disabled=true;
-  // btn.setAttribute('style' , 'background:green')
- 
   let id = btn.parentElement.id
   todos.forEach(todo =>{
     if(todo.id==id){
@@ -93,8 +88,13 @@ function done(e){
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function delTodo(e){
-  console.log(e)
-  console.log('deleted')
+  let id = e.target.parentElement.id
+  // higher order array funtion for returning array based on condition
+  todos = todos.filter(function( obj ) {
+    return obj.id != id;
+  });
+  console.log(todos)
+  renderTodos()
 }
 
 
@@ -115,10 +115,9 @@ function doneornot(){
 
 
 // for fun 
-
-document.querySelector('body').addEventListener('mousemove' , animate);
-function animate(e){
-  // console.log(e.screenX + " " + e.screenY )
-  let body = document.querySelector('body')
-  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
-}
+// document.querySelector('body').addEventListener('mousemove' , animate);
+// function animate(e){
+//   // console.log(e.screenX + " " + e.screenY )
+//   let body = document.querySelector('body')
+//   body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
+// }
