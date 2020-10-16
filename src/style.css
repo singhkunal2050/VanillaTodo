@@ -35,6 +35,8 @@ input , button{
 
 .todoinput{
   min-width: 40vw;
+  max-width: 90%;
+  font-size: 1.6em;
 }
 
 
@@ -42,6 +44,8 @@ input , button{
   background: rgb(61, 0, 29) !important;
   color: white;
   font-weight: bold;
+  font-size: 1.6em;
+  cursor: pointer;
 }
 
 
