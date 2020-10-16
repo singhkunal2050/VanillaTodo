@@ -74,7 +74,8 @@ input , button{
 .tododetails{
   margin: 8px;
   flex: .8;
-  overflow-x: scroll;
+  max-width: 70%;
+  word-wrap: break-word;
   background: white;
   padding: 10px;
   border-radius: 16px;
@@ -135,5 +136,6 @@ input , button{
 
   .tododetails{
     align-self: stretch;
-  }
+    max-width: 100%;
+   }
 }
