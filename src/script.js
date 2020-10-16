@@ -1,5 +1,5 @@
-todos = []
-let flag = false;
+todos = JSON.parse(localStorage.todos) ||  []            // start with old todos or blank 
+let flag = false;            // default iscompleted for todo
 
 // let newt = {
 //   id:1,
@@ -53,7 +53,6 @@ document.querySelector('.todoinput').addEventListener('keypress', function (e) {
 document.getElementById('addbtn').addEventListener('click' , addnewTodo )
 function addnewTodo(){
   let input = document.querySelector('.todoinput').value;
-  flag= !flag
   console.log(input)
   if(input==='')
     alert('Come on!')
@@ -62,20 +61,22 @@ function addnewTodo(){
       id: Math.floor(Math.random()*1000%999),
       title :input , 
       time : new Date().getTime(),
-      isCompleted : !flag,
+      isCompleted : flag,
     }
     todos.unshift(newt)
   }
   document.querySelector('.todoinput').value=""
   console.log(todos)
+  savetoLocalStorage()
   renderTodos()
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function savetoLocalStorage(todolist){
-  localStorage.setItem('todos' , todolist);
+function savetoLocalStorage(){
+  localStorage.setItem('todos' , JSON.stringify(todos))
   console.log(localStorage)
+  console.log("Saved to LS! :]")
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -88,6 +89,7 @@ function done(e){
       todo.isCompleted=!todo.isCompleted;
     }
   });
+  savetoLocalStorage()
   renderTodos()
 }
 
@@ -100,6 +102,7 @@ function delTodo(e){
     return obj.id != id;
   });
   console.log(todos)
+  savetoLocalStorage()
   renderTodos()
 }
 
