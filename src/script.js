@@ -60,7 +60,7 @@ function addnewTodo(){
     let newt = {
       id: Math.floor(Math.random()*1000%999),
       title :input , 
-      time : new Date().getTime(),
+      time : new Date().toLocaleTimeString(),
       isCompleted : flag,
     }
     todos.unshift(newt)
