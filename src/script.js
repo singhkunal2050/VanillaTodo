@@ -1,14 +1,14 @@
 todos = []
 let flag = false;
 
-// let newt = {
-//   title :'input' , 
-//   time : new Date().getTime(),
-//   isCompleted : false,
-// }
+let newt = {
+  title :'input' , 
+  time : new Date().getTime(),
+  isCompleted :  Math.random() >= 0.1,
+}
 
-// for(let i=0 ; i<4 ; i++)
-//   todos.push(newt)
+for(let i=0 ; i<4 ; i++)
+  todos.push(newt)
 
 
 function renderTodos(){
@@ -20,7 +20,6 @@ function renderTodos(){
 
   //checks if todos are complete or not
   doneornot()
-
 }
 
 
@@ -43,13 +42,14 @@ function addnewTodo(){
   console.log(todos)
   renderTodos()
  
- 
   //listning all btns
   todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
     dbtn.addEventListener('click' , done)
   }) : null;
 
-  todos.length>0 ? document.querySelector('.delbtn').addEventListener('click' , delTodo) : null;
+  todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
+    delbtn.addEventListener('click' , delTodo)
+  }) : null;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -62,13 +62,14 @@ function savetoLocalStorage(todolist){
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function done(e){
-  console.log( e)
+  console.log(e.target)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function delTodo(e){
-  console.log( e)
+  console.log(e)
+  console.log('deleted')
 }
 
 
@@ -94,5 +95,5 @@ document.querySelector('body').addEventListener('mousemove' , animate);
 function animate(e){
   // console.log(e.screenX + " " + e.screenY )
   let body = document.querySelector('body')
-  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%44} ,${e.screenY%255})`)
+  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
 }
