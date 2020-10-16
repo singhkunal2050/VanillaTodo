@@ -1,4 +1,4 @@
-let todos = JSON.parse(localStorage.todos) || []            // start with old todos or blank 
+let todos = localStorage.todos===undefined ? [] : JSON.parse(localStorage.todos)       // start with old todos or blank 
 let flag = false;            // default iscompleted for todo
 
 // let newt = {
@@ -34,7 +34,7 @@ function renderTodos(){
   //listning all btns
   todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
     dbtn.addEventListener('click' , done)
-  }) : list.innerHTML = '<h2 style="text-align:center; margin:20px">No Todos Added :( </h2>';
+  }) : list.innerHTML = '<h2 style="text-align:center;">No Todos Added :( </h2>';
 
   todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
     delbtn.addEventListener('click' , delTodo)
