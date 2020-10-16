@@ -1,23 +1,23 @@
 todos = []
 let flag = false;
 
-let newt = {
-  id:1,
-  title :'input' , 
-  time : new Date().getTime(),
-  isCompleted :  Math.random() >= Math.random(),
-}
-let newt2 = {
-  id:2,
-  title :'input' , 
-  time : new Date().getTime(),
-  isCompleted :  Math.random() <= Math.random(),
-}
+// let newt = {
+//   id:1,
+//   title :'input' , 
+//   time : new Date().getTime(),
+//   isCompleted :  Math.random() >= Math.random(),
+// }
+// let newt2 = {
+//   id:2,
+//   title :'input' , 
+//   time : new Date().getTime(),
+//   isCompleted :  Math.random() <= Math.random(),
+// }
 
-for(let i=1 ; i<2 ; i++){
-  todos.push(newt)
-  todos.push(newt2)
-}
+// for(let i=1 ; i<2 ; i++){
+//   todos.push(newt)
+//   todos.push(newt2)
+// }
 
 function renderTodos(){
   let list = document.querySelector('.todolist')
@@ -28,7 +28,6 @@ function renderTodos(){
     else
       list.innerHTML= list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
-
   //checks if todos are complete or not
   doneornot()
 
@@ -111,12 +110,10 @@ function doneornot(){
   })
 }
 
-
-
 // for fun 
-// document.querySelector('body').addEventListener('mousemove' , animate);
-// function animate(e){
-//   // console.log(e.screenX + " " + e.screenY )
-//   let body = document.querySelector('body')
-//   body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
-// }
+document.querySelector('body').addEventListener('mousemove' , animate);
+function animate(e){
+  // console.log(e.screenX + " " + e.screenY )
+  let body = document.querySelector('body')
+  body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
+}
