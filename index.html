@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanilla Todo</title>
   <link rel="stylesheet" href="src/style.css">
+  <!-- MDI ICONS  -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.7.55/css/materialdesignicons.min.css"
+    integrity="sha512-Yy8l8Uirb3w3G8SP+l7UwwzxRhZsGkmAqN7TFG6MT5nZi1VOkpo+hg3OrEl66fngrGAeL8LlUEoXfT6fRina6g=="
+    crossorigin="anonymous" />
 
 </head>
+
 <body onload="renderTodos()" style="min-height: 100vh;">
 
   <div class="container">
     <div class="topsection">
-       <h2>Vanilla Todo Webapp</h2>
-        <div class="addtodo">
-          <input class="todoinput" type="text">
-          <button id="addbtn">Add</button>
-        </div>
+      <h2>Vanilla Todo Webapp</h2>
+      <div class="addtodo">
+        <input class="todoinput" type="text">
+        <button id="addbtn">Add</button>
+      </div>
     </div>
     <div class="todosection">
       <div class="todolist">
-       <!-- <div class="todo">
+        <!-- <div class="todo">
           <p class="tododetails">This is the todo</p>
           <p class="todotime">05:30 PM</p>
           <button class="donebtn">Completed</button>
@@ -41,10 +48,14 @@
       </div>
     </div>
 
-     <button id="cleartodo"> Delete all</button>
+    <button id="cleartodo"> <span class="mdi mdi-delete"></span></button>
   </div>
 
   <script src="src/script.js"></script>
-  
+  <!-- Sweet alert  -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 </body>
+
 </html>

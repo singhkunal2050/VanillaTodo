@@ -1,4 +1,4 @@
-todos = JSON.parse(localStorage.todos) ||  []            // start with old todos or blank 
+let todos = JSON.parse(localStorage.todos) || []            // start with old todos or blank 
 let flag = false;            // default iscompleted for todo
 
 // let newt = {
@@ -55,7 +55,7 @@ function addnewTodo(){
   let input = document.querySelector('.todoinput').value;
   console.log(input)
   if(input==='')
-    alert('Come on!')
+    swal("Come on!", "You gotta type!");
   else{
     let newt = {
       id: Math.floor(Math.random()*1000%999),
@@ -128,3 +128,13 @@ function doneornot(){
 //   body.setAttribute('style' , `background:rgb(${e.screenY%255} , ${e.screenX%244} ,${(e.screenY+99)%255})`)
 // }
 
+//////////////////////////////////////////////////////////////////////
+
+
+//delete all todos from localstorage
+
+document.getElementById('cleartodo').addEventListener('click' , ()=>{
+  localStorage.clear()
+  todos=[]
+  renderTodos()
+})

@@ -94,6 +94,28 @@ input , button{
   background: rgb(173, 0, 0);
 }
 
+#cleartodo{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: linear-gradient(310deg , red , rgb(255, 38, 0));
+  border-radius: 50%;
+  min-height: 50px;
+  min-width: 50px;
+  cursor: pointer;
+}
+
+#cleartodo:hover , #cleartodo:active{
+  background: linear-gradient(110deg , red , rgb(255, 38, 0));
+  transform: scale(1.1);
+  transition: ease-in-out 300ms;
+}
+
+.mdi{
+  font-size: 2em;
+  color: aliceblue;
+}
+
 
 @media(max-width:700px){
   .todosection{
