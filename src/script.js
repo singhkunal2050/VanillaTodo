@@ -79,7 +79,7 @@ function done(e){
   let id = btn.parentElement.id
   todos.forEach(todo =>{
     if(todo.id==id){
-      todo.isCompleted=true;
+      todo.isCompleted=!todo.isCompleted;
     }
   });
   renderTodos()
@@ -102,10 +102,9 @@ function doneornot(){
   let dones = document.querySelectorAll('.true')
   dones.forEach(done => {
     done.innerHTML = "Completed✅";
-    done.disabled=true;
+    // done.disabled=true;
     done.setAttribute('style' , 'background:green')
   })
-
   let dones2 = document.querySelectorAll('.false')
   dones2.forEach(done => {
     done.innerHTML = "Incomplete❌";
