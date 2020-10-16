@@ -136,5 +136,6 @@ function doneornot(){
 document.getElementById('cleartodo').addEventListener('click' , ()=>{
   localStorage.clear()
   todos=[]
+  swal('All Todos Deleted!')
   renderTodos()
 })
