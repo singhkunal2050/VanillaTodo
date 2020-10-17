@@ -24,9 +24,9 @@ function renderTodos() {
   list.innerHTML = ""
 
   // sorting incomplete todos firts 
-  todos.sort(function(x, y) {
+  todos.sort(function (x, y) {
     // false values first
-    return (x.isCompleted === y.isCompleted)? 0 : x.isCompleted? 1 : -1;
+    return (x.isCompleted === y.isCompleted) ? 0 : x.isCompleted ? 1 : -1;
   });
 
   todos.forEach(todo => {
@@ -146,24 +146,23 @@ document.getElementById('cleartodo').addEventListener('click', () => {
     swal('NO TODOS TO DELETE 🌚!')
   } else {
     swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover the todos!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          localStorage.clear()
-          todos = []
-          swal("All todos deleted!", {
-            icon: "success",
-          });
-        } else {
-          swal("Nothing Deleted!");
-        }
-      });
-    renderTodos()
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover the todos!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        localStorage.clear()
+        todos = []
+        swal("All todos deleted!", {
+          icon: "success",
+        });
+        renderTodos();
+      } else {
+        swal("Nothing Deleted!");
+      }
+    });
   }
 })
 
@@ -203,3 +202,23 @@ document.getElementById('dwnld').addEventListener('click', () => {
 // add search option 
 // once all todos are completed give a visual animation to celebrate 
 // only valid if the todos are more than 3
+
+
+// Website :: https://vanillatodoo.netlify.app/
+
+// # Features 
+
+// - Adding  todos
+// - Persistent with Local Storage
+// - Delete all in one click
+// - Download todo in .txt format 
+// - fully responsive for all devices 
+// - sorts incomplete tasks to top for better accessibility
+
+
+// # For Future Release
+
+// - top notch UI 
+// - add a copy todo option with each todo
+// - add search todo option
+// - once all todos are completed give a visual animation to celebrate [only valid if the todos are more than 3]
