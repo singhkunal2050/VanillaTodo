@@ -135,25 +135,29 @@ function doneornot() {
 //delete all todos from localstorage
 
 document.getElementById('cleartodo').addEventListener('click', () => {
-  swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover the todos!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        localStorage.clear()
-        todos = []
-        swal("All todos deleted!", {
-          icon: "success",
-        });
-      } else {
-        swal("Nothing Deleted!");
-      }
-    });
-  renderTodos()
+  if (todos.length === 0) {
+    swal('NO TODOS TO DOWNLOAD 🌚!')
+  } else {
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover the todos!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          localStorage.clear()
+          todos = []
+          swal("All todos deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Nothing Deleted!");
+        }
+      });
+    renderTodos()
+  }
 })
 
 //////////////////////////////////////////////////////////////////////
