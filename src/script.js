@@ -22,6 +22,13 @@ let flag = false; // default iscompleted for todo
 function renderTodos() {
   let list = document.querySelector('.todolist')
   list.innerHTML = ""
+
+  // sorting incomplete todos firts 
+  todos.sort(function(x, y) {
+    // false values first
+    return (x.isCompleted === y.isCompleted)? 0 : x.isCompleted? 1 : -1;
+  });
+
   todos.forEach(todo => {
     if (todo.isCompleted === true)
       list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
