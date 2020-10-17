@@ -171,6 +171,7 @@ document.getElementById('downloadtodo').addEventListener('click' , ()=>{
 // make best ui
 // add sorting of todos completed at last
 // add confirmation to delete all
+// add a copy todo option with each todo 
 
 
 
