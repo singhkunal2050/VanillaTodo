@@ -165,3 +165,13 @@ document.getElementById('downloadtodo').addEventListener('click' , ()=>{
 
 });
 
+
+
+// add download todos option
+// make best ui
+// add sorting of todos completed at last
+// add confirmation to delete all
+
+
+
+
