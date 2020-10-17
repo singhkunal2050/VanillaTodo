@@ -134,8 +134,34 @@ function doneornot(){
 //delete all todos from localstorage
 
 document.getElementById('cleartodo').addEventListener('click' , ()=>{
-  localStorage.clear()
-  todos=[]
-  swal('All Todos Deleted!')
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover the todos!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      localStorage.clear()
+      todos=[]
+      swal("All todos deleted!", {
+        icon: "success",
+      });
+    } else {
+      swal("Nothing Deleted!");
+    }
+  });
   renderTodos()
 })
+
+//////////////////////////////////////////////////////////////////////
+
+
+//download all todos from localstorage
+
+document.getElementById('downloadtodo').addEventListener('click' , ()=>{
+  console.log(JSON.stringify(todos));
+
+});
+

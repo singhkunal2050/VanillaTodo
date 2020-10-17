@@ -119,6 +119,25 @@ input , button{
   transition: ease-in-out 300ms;
 }
 
+
+#downloadtodo{
+  position: fixed;
+  right: 70px;
+  bottom: 10px;
+  background: linear-gradient(310deg , #00ff2a , #09ff00);
+  border-radius: 50%;
+  min-height: 50px;
+  min-width: 50px;
+  cursor: pointer;
+}
+
+#downloadtodo:hover , #downloadtodo:active{
+  transform: scale(1.1);
+  background: linear-gradient(310deg , #06cc27 , #07aa02);
+  transition: ease-in-out 300ms;
+}
+
+
 .mdi{
   font-size: 2em;
   color: aliceblue;
