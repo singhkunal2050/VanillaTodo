@@ -15,7 +15,7 @@ Website :: https://vanillatodoo.netlify.app/
 - Download todo in .txt format  ⏬
 - fully responsive for all devices 📱💻🖥
 - sorts incomplete tasks to top for better accessibility 😃
-
+- night mode 🌃
 
 # For Future Release
 
