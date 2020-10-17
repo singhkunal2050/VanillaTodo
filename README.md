@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b20a0d23-05aa-4e87-85de-a02590a686fa/deploy-status)](https://app.netlify.com/sites/vanillatodoo/deploys)
+
 # Simple Todo Webapp
 
 - Using HTML CSS JS 
