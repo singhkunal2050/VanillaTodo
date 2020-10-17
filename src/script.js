@@ -1,5 +1,5 @@
-let todos = localStorage.todos===undefined ? [] : JSON.parse(localStorage.todos)       // start with old todos or blank 
-let flag = false;            // default iscompleted for todo
+let todos = localStorage.todos === undefined ? [] : JSON.parse(localStorage.todos) // start with old todos or blank 
+let flag = false; // default iscompleted for todo
 
 // let newt = {
 //   id:1,
@@ -19,25 +19,25 @@ let flag = false;            // default iscompleted for todo
 //   todos.push(newt2)
 // }
 
-function renderTodos(){
+function renderTodos() {
   let list = document.querySelector('.todolist')
-  list.innerHTML=""
+  list.innerHTML = ""
   todos.forEach(todo => {
-    if(todo.isCompleted===true)
-      list.innerHTML= list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+    if (todo.isCompleted === true)
+      list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
     else
-      list.innerHTML= list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
   //checks if todos are complete or not
   doneornot()
 
   //listning all btns
-  todos.length>0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
-    dbtn.addEventListener('click' , done)
+  todos.length > 0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
+    dbtn.addEventListener('click', done)
   }) : list.innerHTML = '<h2 style="text-align:center; margin-top:20px">No Todos Added 😔 </h2>';
 
-  todos.length>0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
-    delbtn.addEventListener('click' , delTodo)
+  todos.length > 0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
+    delbtn.addEventListener('click', delTodo)
   }) : null;
 
 }
@@ -50,22 +50,23 @@ document.querySelector('.todoinput').addEventListener('keypress', function (e) {
 });
 
 
-document.getElementById('addbtn').addEventListener('click' , addnewTodo )
-function addnewTodo(){
+document.getElementById('addbtn').addEventListener('click', addnewTodo)
+
+function addnewTodo() {
   let input = document.querySelector('.todoinput').value;
   console.log(input)
-  if(input==='')
+  if (input === '')
     swal("Come on!", "You gotta type!");
-  else{
+  else {
     let newt = {
-      id: Math.floor(Math.random()*1000%999),
-      title :input , 
-      time : new Date().toLocaleTimeString(),
-      isCompleted : flag,
+      id: Math.floor(Math.random() * 1000 % 999),
+      title: input,
+      time: new Date().toLocaleTimeString(),
+      isCompleted: flag,
     }
     todos.unshift(newt)
   }
-  document.querySelector('.todoinput').value=""
+  document.querySelector('.todoinput').value = ""
   console.log(todos)
   savetoLocalStorage()
   renderTodos()
@@ -73,20 +74,20 @@ function addnewTodo(){
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function savetoLocalStorage(){
-  localStorage.setItem('todos' , JSON.stringify(todos))
+function savetoLocalStorage() {
+  localStorage.setItem('todos', JSON.stringify(todos))
   console.log(localStorage)
   console.log("Saved to LS! :]")
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function done(e){
+function done(e) {
   let btn = e.target
   let id = btn.parentElement.id
-  todos.forEach(todo =>{
-    if(todo.id==id){
-      todo.isCompleted=!todo.isCompleted;
+  todos.forEach(todo => {
+    if (todo.id == id) {
+      todo.isCompleted = !todo.isCompleted;
     }
   });
   savetoLocalStorage()
@@ -95,10 +96,10 @@ function done(e){
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function delTodo(e){
+function delTodo(e) {
   let id = e.target.parentElement.id
   // higher order array funtion for returning array based on condition
-  todos = todos.filter(function( obj ) {
+  todos = todos.filter(function (obj) {
     return obj.id != id;
   });
   console.log(todos)
@@ -107,12 +108,12 @@ function delTodo(e){
 }
 
 
-function doneornot(){
+function doneornot() {
   let dones = document.querySelectorAll('.true')
   dones.forEach(done => {
     done.innerHTML = "Completed✅";
     // done.disabled=true;
-    done.setAttribute('style' , 'background:green')
+    done.setAttribute('style', 'background:green')
   })
   let dones2 = document.querySelectorAll('.false')
   dones2.forEach(done => {
@@ -133,25 +134,25 @@ function doneornot(){
 
 //delete all todos from localstorage
 
-document.getElementById('cleartodo').addEventListener('click' , ()=>{
+document.getElementById('cleartodo').addEventListener('click', () => {
   swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover the todos!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-      localStorage.clear()
-      todos=[]
-      swal("All todos deleted!", {
-        icon: "success",
-      });
-    } else {
-      swal("Nothing Deleted!");
-    }
-  });
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover the todos!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        localStorage.clear()
+        todos = []
+        swal("All todos deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Nothing Deleted!");
+      }
+    });
   renderTodos()
 })
 
@@ -160,16 +161,24 @@ document.getElementById('cleartodo').addEventListener('click' , ()=>{
 
 //download all todos from localstorage
 
-document.getElementById('dwnld').addEventListener('click' , ()=>{
-  str = "\n----------------TODOS1.0.0-----------------\n"
-  todos.forEach(todo => {
-    const {title , time , isCompleted } = todo
-    str = str + ` TITLE :: ${title} \t\t TIME :: ${time} \t\t COMPLETED :: ${isCompleted} \n\n`
-  }) 
-  var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
-  var dlAnchorElem = document.getElementById('dwnld');
-  dlAnchorElem.setAttribute("href",dataStr);
-  dlAnchorElem.setAttribute("download", "scene.txt");
+document.getElementById('dwnld').addEventListener('click', () => {
+  if (todos.length === 0) {
+    swal('NO TODOS TO DOWNLOAD 🌚!')
+  } else {
+    str = "\n----------------TODOS1.0.0-----------------\n"
+    todos.forEach(todo => {
+      const {
+        title,
+        time,
+        isCompleted
+      } = todo
+      str = str + ` TITLE :: ${title} \t\t TIME :: ${time} \t\t COMPLETED :: ${isCompleted} \n\n`
+    })
+    var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
+    var dlAnchorElem = document.getElementById('dwnld');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "todos.txt");
+  }
 });
 
 
@@ -179,7 +188,3 @@ document.getElementById('dwnld').addEventListener('click' , ()=>{
 // add sorting of todos completed at last
 // add confirmation to delete all
 // add a copy todo option with each todo 
-
-
-
-
