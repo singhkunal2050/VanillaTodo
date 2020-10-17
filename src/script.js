@@ -201,3 +201,5 @@ document.getElementById('dwnld').addEventListener('click', () => {
 // add a copy todo option with each todo 
 // latest windows 10 has emojis with WINDOWS + . shortcut 😊😊
 // add search option 
+// once all todos are completed give a visual animation to celebrate 
+// only valid if the todos are more than 3
