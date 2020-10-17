@@ -11,6 +11,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.7.55/css/materialdesignicons.min.css"
     integrity="sha512-Yy8l8Uirb3w3G8SP+l7UwwzxRhZsGkmAqN7TFG6MT5nZi1VOkpo+hg3OrEl66fngrGAeL8LlUEoXfT6fRina6g=="
     crossorigin="anonymous" />
+  <!-- AOS  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -18,14 +20,14 @@
 
   <div class="container">
     <div class="topsection">
-      <h2>Vanilla Todo Webapp</h2>
-      <div class="addtodo">
+      <h2 data-aos="zoom-in">Vanilla Todo Webapp</h2>
+      <div class="addtodo" data-aos="zoom-out-right" data-aos-delay="400">
         <input class="todoinput inverted" type="text" placeholder="Bring Veggies🥕">
         <button id="addbtn">Add <span class="mdi mdi-chevron-down-circle" style="font-size: 1em;"></span> </button>
       </div>
     </div>
     <div class="todosection">
-      <div class="todolist">
+      <div class="todolist"  data-aos="fade-up">
         <!-- <div class="todo">
           <p class="tododetails">This is the todo</p>
           <p class="todotime">05:30 PM</p>
@@ -57,7 +59,14 @@
   <!-- Sweet alert  -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      AOS.init();
+    });
+  </script>
 
 </body>
+
 
 </html>
