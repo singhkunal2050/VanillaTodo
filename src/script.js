@@ -176,7 +176,7 @@ document.getElementById('dwnld').addEventListener('click', () => {
         time,
         isCompleted
       } = todo
-      str = str + ` TITLE :: ${title} \t\t TIME :: ${time} \t\t COMPLETED :: ${isCompleted} \n\n`
+      str = str + ` TITLE :: ${title} \n TIME :: ${time} \n COMPLETED :: ${isCompleted} \n---------------------------------------\n`
     })
     var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
     var dlAnchorElem = document.getElementById('dwnld');
