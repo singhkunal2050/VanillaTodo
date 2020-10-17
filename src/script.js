@@ -31,9 +31,9 @@ function renderTodos() {
 
   todos.forEach(todo => {
     if (todo.isCompleted === true)
-      list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
     else
-      list.innerHTML = list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
   });
   //checks if todos are complete or not
   doneornot()

@@ -5,9 +5,10 @@
   --back2:#bdbdbd;
   --lightpink:#B44772;
   --green:#74d1a6;
-  --orange:#ffaf9e;
-  --faintyellow:#E8B36E;
+  --orange:#fb937b;
+  --faintyellow:#ffe4c2;
   --red:#b41d20;
+  --backup:#f1d2a4;
 }
 
 *{
@@ -65,17 +66,26 @@ input , button{
   min-width: 40vw;
   max-width: 90%;
   font-size: 1.6em;
-  background: #fff5e6;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+  background: var(--faintyellow);
+  border: 1px solid rgba(160, 81, 45, 0.698);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
+  border-radius: 24px;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: gray;
+  opacity: .7;
+}
 
 #addbtn{
   background: var(--lightpink) !important;
   color: white;
   font-weight: bold;
-  font-size: 1.6em;
+  font-size: 1.3em;
+  padding: 10px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
+  border-radius: 24px;
 }
 
 .swal-button{
@@ -116,7 +126,7 @@ input , button{
   flex: .8;
   max-width: 70%;
   word-wrap: break-word;
-  background: #fff5e6;
+  background: var(--faintyellow);
   padding: 10px;
   border-radius: 16px;
 }
@@ -132,6 +142,7 @@ input , button{
   color: white;
   font-weight: bold;
   cursor: pointer;
+  padding: 10px;
 }
 
 .donebtn{
@@ -152,6 +163,7 @@ input , button{
   min-width: 50px;
   cursor: pointer;
   transform: rotate(-10deg);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
 }
 
 
@@ -164,6 +176,7 @@ input , button{
   min-height: 50px;
   min-width: 50px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
 }
 
 #cleartodo:hover , #cleartodo:active{
@@ -177,16 +190,17 @@ input , button{
   position: fixed;
   right: 70px;
   bottom: 10px;
-  background: linear-gradient(310deg , #74d1a6 , #35f64f);
+  background: linear-gradient(310deg , #0aa75d , #35f64f);
   border-radius: 50%;
   min-height: 50px;
   min-width: 50px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
 }
 
 #downloadtodo:hover , #downloadtodo:active{
   transform: scale(1.1);
-  background: linear-gradient(310deg , #06cc27 , #74d1a6);
+  background: linear-gradient(310deg , #06cc27 , #0f9456);
   transition: ease-in-out 300ms;
 }
 
@@ -222,4 +236,17 @@ input , button{
     align-self: stretch;
     max-width: 100%;
    }
+
+   .todotime{
+     font-size: .8em;
+   }
+
+   .delbtn{
+     margin: 5px 20px;
+   }
+
+   .donebtn{
+    margin: 5px 20px;
+  }
+
 }
