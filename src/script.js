@@ -169,14 +169,14 @@ document.getElementById('dwnld').addEventListener('click', () => {
   if (todos.length === 0) {
     swal('NO TODOS TO DOWNLOAD 🌚!')
   } else {
-    str = "\n----------------TODOS1.0.0-----------------\n"
+    str = "\n\n-----------------------------TODOS1.0.0-----------------------------------\n\n"
     todos.forEach(todo => {
       const {
         title,
         time,
         isCompleted
       } = todo
-      str = str + ` TITLE :: ${title} \n TIME :: ${time} \n COMPLETED :: ${isCompleted} \n---------------------------------------\n`
+      str = str + ` TITLE :: ${title} \n TIME :: ${time} \n COMPLETED :: ${isCompleted} \n------------------------------------------------------------------------------\n`
     })
     var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
     var dlAnchorElem = document.getElementById('dwnld');
