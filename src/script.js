@@ -191,6 +191,20 @@ document.getElementById('dwnld').addEventListener('click', () => {
   }
 });
 
+//////////////////////////////////////////////////////////////////////
+
+
+//adding dark mode 
+
+document.querySelector('#nightmode-toggle').addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode')
+  document.querySelectorAll('.inverted').forEach((result) => {
+    result.classList.toggle('invert')
+  });
+})
+
+
+
 
 
 // add download todos option ✔✔

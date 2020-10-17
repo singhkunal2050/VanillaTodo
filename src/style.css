@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .container{
-  /* background: var(--back2); */
+  background: var(--back2);
 }
 
 .topsection, .todosection{
@@ -60,6 +60,8 @@ input , button{
   min-width: 40vw;
   max-width: 90%;
   font-size: 1.6em;
+  background: rgb(255, 245, 230);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
 }
 
 
@@ -90,14 +92,17 @@ input , button{
   align-items: center;
   border-radius: 8px;
   margin: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.164);
 }
 
 .completed{
   background: var(--green);
+  border-left:10px #00b152 double;
 }
 
 .incomplete{
   background: var(--orange);
+  border-left:10px #ec4d2a double;
 }
 
 
@@ -131,6 +136,19 @@ input , button{
 .delbtn{
   background: var(--red);
 }
+
+#nightmode-toggle{
+  position: fixed;
+  left:10px;
+  bottom: 10px;
+  background: linear-gradient(310deg , #B44772 , #1c0b38);
+  border-radius: 50%;
+  min-height: 50px;
+  min-width: 50px;
+  cursor: pointer;
+  transform: rotate(-10deg);
+}
+
 
 #cleartodo{
   position: fixed;
@@ -172,6 +190,19 @@ input , button{
   font-size: 2em;
   color: aliceblue;
 }
+
+/* DARK MODE ---------------- */
+
+
+
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.invert{
+  filter: invert(100%) hue-rotate(180deg);
+}
+
 
 
 @media(max-width:700px){
