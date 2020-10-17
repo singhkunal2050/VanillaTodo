@@ -207,15 +207,15 @@ function nighToggle() {
 
 
 // add download todos option ✔✔
-// make best ui
-// add sorting of todos completed at last
-// add confirmation to delete all
+// make best ui ✔✔
+// add sorting of todos completed at last ✔✔
+// add confirmation to delete all ✔✔
 // add a copy todo option with each todo 
 // latest windows 10 has emojis with WINDOWS + . shortcut 😊😊
-// add search option 
+// add search option  
 // once all todos are completed give a visual animation to celebrate 
 // only valid if the todos are more than 3
-// night mode
+// night mode ✔✔
 
 
 // Website :: https://vanillatodoo.netlify.app/
