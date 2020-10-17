@@ -136,7 +136,7 @@ function doneornot() {
 
 document.getElementById('cleartodo').addEventListener('click', () => {
   if (todos.length === 0) {
-    swal('NO TODOS TO DOWNLOAD 🌚!')
+    swal('NO TODOS TO DELETE 🌚!')
   } else {
     swal({
         title: "Are you sure?",
