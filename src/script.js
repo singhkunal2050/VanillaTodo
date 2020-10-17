@@ -187,9 +187,10 @@ document.getElementById('dwnld').addEventListener('click', () => {
 
 
 
-// add download todos option
+// add download todos option ✔✔
 // make best ui
 // add sorting of todos completed at last
 // add confirmation to delete all
 // add a copy todo option with each todo 
 // latest windows 10 has emojis with WINDOWS + . shortcut 😊😊
+// add search option 
