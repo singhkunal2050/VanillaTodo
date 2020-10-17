@@ -160,9 +160,16 @@ document.getElementById('cleartodo').addEventListener('click' , ()=>{
 
 //download all todos from localstorage
 
-document.getElementById('downloadtodo').addEventListener('click' , ()=>{
-  console.log(JSON.stringify(todos));
-
+document.getElementById('dwnld').addEventListener('click' , ()=>{
+  str = "\n----------------TODOS1.0.0-----------------\n"
+  todos.forEach(todo => {
+    const {title , time , isCompleted } = todo
+    str = str + ` TITLE :: ${title} \t\t TIME :: ${time} \t\t COMPLETED :: ${isCompleted} \n\n`
+  }) 
+  var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
+  var dlAnchorElem = document.getElementById('dwnld');
+  dlAnchorElem.setAttribute("href",dataStr);
+  dlAnchorElem.setAttribute("download", "scene.txt");
 });
 
 
