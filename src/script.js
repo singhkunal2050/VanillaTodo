@@ -31,9 +31,9 @@ function renderTodos() {
 
   todos.forEach(todo => {
     if (todo.isCompleted === true)
-      list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo completed" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
     else
-      list.innerHTML = list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo incomplete" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete</button></div>`
   });
   //checks if todos are complete or not
   doneornot()
@@ -41,7 +41,7 @@ function renderTodos() {
   //listning all btns
   todos.length > 0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
     dbtn.addEventListener('click', done)
-  }) : list.innerHTML = '<h2 style="text-align:center; margin-top:20px">No Todos Added 😔 </h2>';
+  }) : list.innerHTML = '<h2 style="text-align:center; margin-top:20px">No Todos Added  <span class="inverted">😔</span> </h2>';
 
   todos.length > 0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
     delbtn.addEventListener('click', delTodo)
@@ -118,13 +118,13 @@ function delTodo(e) {
 function doneornot() {
   let dones = document.querySelectorAll('.true')
   dones.forEach(done => {
-    done.innerHTML = "Completed✅";
+    done.innerHTML = 'Completed<span class="inverted"> ✅</span>';
     // done.disabled=true;
     done.setAttribute('style', 'background:#177148')
   })
   let dones2 = document.querySelectorAll('.false')
   dones2.forEach(done => {
-    done.innerHTML = "Incomplete❌";
+    done.innerHTML = 'Incomplete<span class="inverted"> ❌<span>';
   })
 }
 
@@ -195,14 +195,13 @@ document.getElementById('dwnld').addEventListener('click', () => {
 
 
 //adding dark mode 
-
-document.querySelector('#nightmode-toggle').addEventListener('click', () => {
+document.querySelector('#nightmode-toggle').addEventListener('click', nighToggle )
+function nighToggle() {
   document.documentElement.classList.toggle('dark-mode')
   document.querySelectorAll('.inverted').forEach((result) => {
     result.classList.toggle('invert')
   });
-})
-
+}
 
 
 
