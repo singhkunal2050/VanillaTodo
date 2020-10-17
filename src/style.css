@@ -124,6 +124,13 @@ input , button{
   background: var(--orange);
   border-left:10px #ec4d2a double;
 }
+.incomplete .tododetails{
+  text-decoration: unset;
+}
+
+.completed .tododetails{
+  text-decoration: line-through;
+}
 
 
 .tododetails{
