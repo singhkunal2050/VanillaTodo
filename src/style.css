@@ -104,6 +104,7 @@ input , button{
 .todolist{
   border-radius: 8px;
   padding: 10px;
+  margin-bottom: 80px;
 }
 
 .todo{
