@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Alatsi&display=swap');
 
 :root{
-  --back:#f6eccc;
-  --back2:#f1a886;
-  --lightpink:#B44772;
-  --green:#74d1a6;
-  --orange:#fb937b;
-  --faintyellow:#ffe4c2;
-  --red:#b41d20;
+  --back:#f8e8b1;
+  --back2:#ffcfb9;
+  --lightpink:#ff6964;
+  --green:#a0e599;
+  --orange:#fbbdaf;
+  --faintyellow:#fdf2e2;
+  --red:#ff2c2c;
   --backup:#f1d2a4;
 }
 
@@ -42,7 +42,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .topsection{
-  background: linear-gradient(110deg , var(--faintyellow) , #fdd8b6) ;
+  background: linear-gradient(110deg , var(--faintyellow) , #ffe7d0) ;
   text-align: center;
   border-bottom: 4px solid var(--orange);
   margin: 10px;
@@ -51,7 +51,7 @@ h1,h2,h3,h4,h5,h6{
 
 .todosection{
   /* background: var(--back); */
-  background: linear-gradient(110deg , var(--faintyellow) , #ffe0c3) ;
+  background: linear-gradient(110deg , var(--faintyellow) , #fae3ce) ;
   min-height: 85vh;
   border-bottom: 4px solid var(--orange);
   margin: 10px;
@@ -151,7 +151,7 @@ input , button{
 }
 
 .donebtn{
-  background: #ec4d2a;
+  background: #ff6b27;
 }
 
 .delbtn{
@@ -238,6 +238,11 @@ input , button{
 
   .todo{
     flex-direction: column;
+    padding: 10px;
+  }
+
+  .todosection{
+    padding: 0;
   }
 
   .tododetails{
