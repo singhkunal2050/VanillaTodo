@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .topsection{
-  background: linear-gradient(110deg , var(--faintyellow) , #ffcd9e) ;
+  background: linear-gradient(110deg , var(--faintyellow) , #fdd8b6) ;
   text-align: center;
   border-bottom: 4px solid var(--orange);
   margin: 10px;
@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
 
 .todosection{
   /* background: var(--back); */
-  background: linear-gradient(110deg , var(--faintyellow) , #ffcd9e) ;
+  background: linear-gradient(110deg , var(--faintyellow) , #ffe0c3) ;
   min-height: 85vh;
   border-bottom: 4px solid var(--orange);
   margin: 10px;
