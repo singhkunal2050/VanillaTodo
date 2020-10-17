@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Alatsi&display=swap');
 
 :root{
-  --back:#f3f4f0;
+  --back:#f6eccc;
   --back2:#bdbdbd;
   --lightpink:#B44772;
   --green:#74d1a6;
@@ -189,7 +189,6 @@ input , button{
   background: linear-gradient(310deg , #06cc27 , #74d1a6);
   transition: ease-in-out 300ms;
 }
-
 
 .mdi{
   font-size: 2em;
