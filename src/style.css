@@ -22,8 +22,6 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Alatsi', sans-serif;
 }
 
-
-
 .topsection, .todosection{
   -webkit-box-shadow: 15px 13px 31px -4px rgba(0, 0, 0, 0.082);
   -moz-box-shadow: 15px 13px 31px -4px rgba(0, 0, 0, 0.109);
@@ -31,6 +29,12 @@ h1,h2,h3,h4,h5,h6{
   border-radius: 8px;
   padding: 20px;
 }
+
+/* .topsection h2{
+  background: #ec4d2a;
+  padding: 10px;
+  border-radius: 24px;
+} */
 
 .container{
   background: var(--back2) !important;
@@ -225,10 +229,13 @@ input , button{
 
 
 @media(max-width:700px){
-  .todosection{
-    padding: 0;
-  }
-  
+ 
+
+  #addbtn{
+    width: 90%;
+    padding: 10px 1px;
+  }  
+
   .todo{
     flex-direction: column;
   }
@@ -249,5 +256,8 @@ input , button{
    .donebtn{
     margin: 5px 20px;
   }
+
+
+
 
 }
