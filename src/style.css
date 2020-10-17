@@ -1,27 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Alatsi&display=swap');
+
+:root{
+  --back:#f3f4f0;
+  --back2:#bdbdbd;
+  --lightpink:#B44772;
+  --green:#74d1a6;
+  --orange:#ffaf9e;
+  --faintyellow:#E8B36E;
+  --red:#b41d20;
+}
+
+
 *{
   font-family: Arial;
   padding: 0;
   margin: 0;
+  font-family: 'Alata', sans-serif;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Alatsi', sans-serif;
+}
+
+.container{
+  /* background: var(--back2); */
+}
 
 .topsection, .todosection{
-  -webkit-box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
-  -moz-box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
-  box-shadow: 15px 13px 31px -4px rgba(0,0,0,0.21);
-  margin: 10px;
+  -webkit-box-shadow: 15px 13px 31px -4px rgba(0, 0, 0, 0.082);
+  -moz-box-shadow: 15px 13px 31px -4px rgba(0, 0, 0, 0.109);
+  box-shadow: 15px 13px 31px -4px rgba(0, 0, 0, 0.164);
   border-radius: 8px;
   padding: 20px;
+  margin: 10px;
 }
 
 .topsection{
-  background: rgb(255, 208, 208);
+  background: var(--back);
   text-align: center;
+  border-bottom: 4px solid var(--orange);
 }
 
 .todosection{
-  background: rgb(255, 244, 244);
-  min-height: 75vh;
+  background: var(--back);
+  min-height: 85vh;
+  border-bottom: 4px solid var(--orange);
 }
 
 
@@ -41,13 +64,20 @@ input , button{
 
 
 #addbtn{
-  background: rgb(61, 0, 29) !important;
+  background: var(--lightpink) !important;
   color: white;
   font-weight: bold;
   font-size: 1.6em;
   cursor: pointer;
 }
 
+.swal-button{
+  background: var(--lightpink) !important;
+}
+
+.swal-button--cancel{
+  background: var(--back) !important;
+}
 
 .todolist{
   border-radius: 8px;
@@ -63,11 +93,11 @@ input , button{
 }
 
 .completed{
-  background: greenyellow;
+  background: var(--green);
 }
 
 .incomplete{
-  background: orange;
+  background: var(--orange);
 }
 
 
@@ -95,18 +125,18 @@ input , button{
 }
 
 .donebtn{
-  background: rgb(114, 103, 0);
+  background: #ec4d2a;
 }
 
 .delbtn{
-  background: rgb(173, 0, 0);
+  background: var(--red);
 }
 
 #cleartodo{
   position: fixed;
   right: 10px;
   bottom: 10px;
-  background: linear-gradient(310deg , red , rgb(255, 38, 0));
+  background: linear-gradient(310deg , red , #b41d20);
   border-radius: 50%;
   min-height: 50px;
   min-width: 50px;
@@ -114,7 +144,7 @@ input , button{
 }
 
 #cleartodo:hover , #cleartodo:active{
-  background: linear-gradient(110deg , red , rgb(255, 38, 0));
+  background: linear-gradient(110deg , red , #b41d20);
   transform: scale(1.1);
   transition: ease-in-out 300ms;
 }
@@ -124,7 +154,7 @@ input , button{
   position: fixed;
   right: 70px;
   bottom: 10px;
-  background: linear-gradient(310deg , #00ff2a , #09ff00);
+  background: linear-gradient(310deg , #74d1a6 , #35f64f);
   border-radius: 50%;
   min-height: 50px;
   min-width: 50px;
@@ -133,7 +163,7 @@ input , button{
 
 #downloadtodo:hover , #downloadtodo:active{
   transform: scale(1.1);
-  background: linear-gradient(310deg , #06cc27 , #07aa02);
+  background: linear-gradient(310deg , #06cc27 , #74d1a6);
   transition: ease-in-out 300ms;
 }
 

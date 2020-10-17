@@ -120,7 +120,7 @@ function doneornot() {
   dones.forEach(done => {
     done.innerHTML = "Completed✅";
     // done.disabled=true;
-    done.setAttribute('style', 'background:green')
+    done.setAttribute('style', 'background:#177148')
   })
   let dones2 = document.querySelectorAll('.false')
   dones2.forEach(done => {
@@ -202,6 +202,7 @@ document.getElementById('dwnld').addEventListener('click', () => {
 // add search option 
 // once all todos are completed give a visual animation to celebrate 
 // only valid if the todos are more than 3
+// night mode
 
 
 // Website :: https://vanillatodoo.netlify.app/
