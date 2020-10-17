@@ -216,8 +216,8 @@ function nighToggle() {
 // once all todos are completed give a visual animation to celebrate 
 // only valid if the todos are more than 3
 // night mode ✔✔
-// animations 
-// strike through completed
+// animations ✔✔
+// strike through completed✔✔
 
 
 // Website :: https://vanillatodoo.netlify.app/
