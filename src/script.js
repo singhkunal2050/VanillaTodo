@@ -181,7 +181,7 @@ document.getElementById('dwnld').addEventListener('click', () => {
     var dataStr = "data:text/txt;charset=utf-8," + encodeURIComponent(str);
     var dlAnchorElem = document.getElementById('dwnld');
     dlAnchorElem.setAttribute("href", dataStr);
-    dlAnchorElem.setAttribute("download", "todos.txt");
+    dlAnchorElem.setAttribute("download", `todos_${MATH.random()*1000%9999}.txt`);
   }
 });
 
