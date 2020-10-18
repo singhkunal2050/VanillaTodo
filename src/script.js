@@ -1,5 +1,6 @@
 let todos = localStorage.todos === undefined ? [] : JSON.parse(localStorage.todos) // start with old todos or blank 
 let flag = false; // default iscompleted for todo
+let night = localStorage.night === undefined ? false : localStorage.night // start with old todos or blank 
 
 // let newt = {
 //   id:1,
@@ -31,9 +32,9 @@ function renderTodos() {
 
   todos.forEach(todo => {
     if (todo.isCompleted === true)
-      list.innerHTML = list.innerHTML + `<div class="todo completed" data-aos="fade-up"  id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo completed" data-aos="fade-up"  id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
     else
-      list.innerHTML = list.innerHTML + `<div class="todo incomplete" data-aos="fade-up" id=${todo.id}><p class="tododetails inverted"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
+      list.innerHTML = list.innerHTML + `<div class="todo incomplete" data-aos="fade-up" id=${todo.id}><p class="tododetails"> ${todo.title} </p><p class="todotime">${todo.time}</p><button class="donebtn ${todo.isCompleted}" >Incomplete</button><button class="delbtn" >Delete <span class="mdi mdi-delete" style="font-size:1.2em"></span></button></div>`
   });
   //checks if todos are complete or not
   doneornot()
@@ -193,14 +194,26 @@ document.getElementById('dwnld').addEventListener('click', () => {
 
 //////////////////////////////////////////////////////////////////////
 
+if (JSON.parse(localStorage.night))
+  lastMode()
+
+function lastMode() {
+  document.documentElement.classList.toggle('dark-mode')
+  document.querySelectorAll('.inverted').forEach((result) => {
+    result.classList.toggle('invert')
+  });
+}
 
 //adding dark mode 
-document.querySelector('#nightmode-toggle').addEventListener('click', nighToggle )
+document.querySelector('#nightmode-toggle').addEventListener('click', nighToggle)
+
 function nighToggle() {
   document.documentElement.classList.toggle('dark-mode')
   document.querySelectorAll('.inverted').forEach((result) => {
     result.classList.toggle('invert')
   });
+  night = localStorage.night = localStorage.night === undefined ? true : !JSON.parse(localStorage.night)
+  console.log(night)
 }
 
 
