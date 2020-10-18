@@ -72,7 +72,7 @@ input , button{
   max-width: 90%;
   font-size: 1.6em;
   background: var(--faintyellow);
-  border: 1px solid rgba(160, 81, 45, 0.698);
+  border: 1px solid #da94749b;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
   border-radius: 24px;
 }
@@ -80,6 +80,7 @@ input , button{
 ::-webkit-input-placeholder { /* WebKit browsers */
   color: gray;
   opacity: .7;
+  text-align: center;
 }
 
 #addbtn{
@@ -238,6 +239,9 @@ input , button{
 
 @media(max-width:700px){
  
+  .todoinput{
+    width: 90%;
+  }
 
   #addbtn{
     width: 90%;
