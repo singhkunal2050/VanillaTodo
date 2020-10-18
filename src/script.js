@@ -212,7 +212,7 @@ function nighToggle() {
   document.querySelectorAll('.inverted').forEach((result) => {
     result.classList.toggle('invert')
   });
-  night = localStorage.night = localStorage.night === undefined ? true : !JSON.parse(localStorage.night)
+  localStorage.night =!JSON.parse(localStorage.night)
   console.log(night)
 }
 
