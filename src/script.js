@@ -1,6 +1,6 @@
 let todos = localStorage.todos === undefined ? [] : JSON.parse(localStorage.todos) // start with old todos or blank 
 let flag = false; // default iscompleted for todo
-let night = localStorage.night === undefined ? false : localStorage.night // start with old todos or blank 
+localStorage.night = localStorage.night === undefined ? false : localStorage.night // start with old todos or blank 
 
 // let newt = {
 //   id:1,
