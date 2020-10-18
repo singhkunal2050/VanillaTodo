@@ -42,7 +42,7 @@ function renderTodos() {
   //listning all btns
   todos.length > 0 ? document.querySelectorAll('.donebtn').forEach(dbtn => {
     dbtn.addEventListener('click', done)
-  }) : list.innerHTML = '<h2 style="text-align:center; margin-top:20px">No Todos Added  <span class="inverted">😔</span> </h2>';
+  }) : list.innerHTML = `<h2 style="text-align:center; margin-top:20px">No Todos Added  <span class="inverted ${JSON.parse(localStorage.night) ? 'invert' : 'null'}">😔</span> </h2>`;
 
   todos.length > 0 ? document.querySelectorAll('.delbtn').forEach(delbtn => {
     delbtn.addEventListener('click', delTodo)
@@ -213,7 +213,6 @@ function nighToggle() {
     result.classList.toggle('invert')
   });
   localStorage.night =!JSON.parse(localStorage.night)
-  console.log(night)
 }
 
 
